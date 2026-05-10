@@ -93,7 +93,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "canonical", href: "https://bonanzahandyman.com/" },
+      { rel: "canonical", href: "https://bonanza-handyman.com/" },
     ],
   }),
   shellComponent: RootShell,
