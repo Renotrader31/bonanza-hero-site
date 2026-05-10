@@ -35,7 +35,7 @@ import heroImg from "@/assets/hero-handyman.jpg";
 
 const PHONE_DISPLAY = "(775) 555-0123";
 const PHONE_TEL = "+17755550123";
-const EMAIL = "hello@bonanzahandyman.com";
+const EMAIL = "hello@bonanza-handyman.com";
 
 const services = [
   { icon: Wrench, title: "General Handyman", desc: "Honey-do lists, mounting, repairs, and odd jobs done right the first time." },
@@ -68,8 +68,8 @@ const faqs = [
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { property: "og:image", content: "https://bonanzahandyman.com/og-image.jpg" },
-      { property: "twitter:image", content: "https://bonanzahandyman.com/og-image.jpg" },
+      { property: "og:image", content: "https://bonanza-handyman.com/og-image.jpg" },
+      { property: "twitter:image", content: "https://bonanza-handyman.com/og-image.jpg" },
     ],
     scripts: [
       {
@@ -79,15 +79,15 @@ export const Route = createFileRoute("/")({
           "@graph": [
             {
               "@type": "LocalBusiness",
-              "@id": "https://bonanzahandyman.com/#business",
+              "@id": "https://bonanza-handyman.com/#business",
               name: "Bonanza Handyman Services",
               description:
                 "Same-day handyman and home services in Reno, Sparks, Carson City and the Lake Tahoe area. Licensed, insured and bonded.",
-              url: "https://bonanzahandyman.com/",
+              url: "https://bonanza-handyman.com/",
               telephone: PHONE_TEL,
               email: EMAIL,
               priceRange: "$$",
-              image: "https://bonanzahandyman.com/og-image.jpg",
+              image: "https://bonanza-handyman.com/og-image.jpg",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Reno",
@@ -121,7 +121,7 @@ export const Route = createFileRoute("/")({
             {
               "@type": "Service",
               serviceType: "Handyman Services",
-              provider: { "@id": "https://bonanzahandyman.com/#business" },
+              provider: { "@id": "https://bonanza-handyman.com/#business" },
               areaServed: cities,
               hasOfferCatalog: {
                 "@type": "OfferCatalog",
