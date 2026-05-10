@@ -72,20 +72,28 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Bonanza Handyman Services | Same-Day Handyman in Reno, NV" },
+      {
+        name: "description",
+        content:
+          "Same-day & next-day handyman services in Reno, Sparks, Carson City & Tahoe. Licensed, insured & bonded. Free quotes. Call (775) 555-0123.",
+      },
+      { name: "author", content: "Bonanza Handyman Services" },
+      { name: "robots", content: "index, follow" },
+      { property: "og:title", content: "Bonanza Handyman Services | Same-Day Handyman in Reno" },
+      {
+        property: "og:description",
+        content:
+          "Licensed, insured & bonded handyman in Reno/Sparks/Carson City/Tahoe. Same-day response. Free quotes.",
+      },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { property: "og:locale", content: "en_US" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "theme-color", content: "#c2410c" },
     ],
     links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
+      { rel: "stylesheet", href: appCss },
+      { rel: "canonical", href: "https://bonanzahandyman.com/" },
     ],
   }),
   shellComponent: RootShell,

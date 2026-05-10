@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap");
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -40,6 +41,9 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-primary-glow: var(--primary-glow);
+  --font-display: var(--font-display);
+  --font-sans: var(--font-body);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
@@ -62,21 +66,28 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --radius: 0.75rem;
+  --background: oklch(0.99 0.005 80);
+  --foreground: oklch(0.20 0.03 250);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
+  --card-foreground: oklch(0.20 0.03 250);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.20 0.03 250);
+  --primary: oklch(0.55 0.20 35);
+  --primary-foreground: oklch(0.99 0.005 80);
+  --primary-glow: oklch(0.68 0.18 50);
+  --secondary: oklch(0.30 0.06 250);
+  --secondary-foreground: oklch(0.99 0.005 80);
+  --muted: oklch(0.96 0.01 80);
+  --muted-foreground: oklch(0.45 0.03 250);
+  --accent: oklch(0.72 0.16 85);
+  --accent-foreground: oklch(0.20 0.03 250);
+  --gradient-hero: linear-gradient(135deg, oklch(0.55 0.20 35), oklch(0.68 0.18 50));
+  --gradient-warm: linear-gradient(180deg, oklch(0.99 0.005 80), oklch(0.96 0.02 70));
+  --shadow-bold: 0 20px 50px -15px oklch(0.55 0.20 35 / 0.35);
+  --shadow-card: 0 8px 24px -8px oklch(0.20 0.03 250 / 0.12);
+  --font-display: "Archivo Black", "Arial Black", sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(0.929 0.013 255.508);
@@ -140,5 +151,11 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
   }
 }
