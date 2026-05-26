@@ -223,10 +223,10 @@ function Hero() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-            <Button asChild size="lg" className="font-semibold uppercase tracking-wider" style={{ background: "var(--brand-gold)", color: "var(--bg-dark)" }}>
+            <Button asChild size="lg" className="w-full sm:w-auto h-12 font-semibold uppercase tracking-wider" style={{ background: "var(--brand-gold)", color: "var(--bg-dark)" }}>
               <a href="#contact">Get a free quote</a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="font-semibold border-2" style={{ borderColor: "var(--brand-cream)", color: "var(--brand-cream)", background: "transparent" }}>
+            <Button asChild size="lg" variant="outline" className="w-full sm:w-auto h-12 font-semibold border-2" style={{ borderColor: "var(--brand-cream)", color: "var(--brand-cream)", background: "transparent" }}>
               <a href={`tel:${PHONE_TEL}`}><Phone className="w-4 h-4" /> Call now</a>
             </Button>
           </div>
