@@ -168,18 +168,18 @@ function Index() {
 
 function Header() {
   return (
-    <header className="sticky top-0 z-40 backdrop-blur bg-background/85 border-b border-border">
-      <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-2">
+    <header className="sticky top-0 z-40 backdrop-blur bg-background/90 border-b" style={{ borderColor: "var(--brand-gold)" }}>
+      <div className="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
+        <a href="#top" className="flex items-center" aria-label="Bonanza Handyman Services home">
           <img
             src={logoImg}
             alt="Bonanza Handyman Services logo"
-            className="h-12 w-auto"
+            className="h-11 sm:h-14 w-auto"
           />
         </a>
         <a
           href={`tel:${PHONE_TEL}`}
-          className="hidden sm:inline-flex items-center gap-2 text-primary font-bold hover:text-primary-glow transition-colors"
+          className="hidden sm:inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-glow transition-colors tracking-wide"
         >
           <Phone className="w-4 h-4" /> {PHONE_DISPLAY}
         </a>
@@ -190,16 +190,25 @@ function Header() {
 
 function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden" style={{ background: "var(--gradient-warm)" }}>
+    <section
+      id="top"
+      className="relative overflow-hidden"
+      style={{ background: "var(--bg-dark)", color: "var(--text-light)" }}
+    >
       <div className="max-w-6xl mx-auto px-4 pt-12 pb-16 md:pt-20 md:pb-24 grid md:grid-cols-2 gap-10 items-center">
-        <div>
-          <div className="inline-flex items-center gap-2 rounded-full bg-accent/30 text-accent-foreground px-3 py-1 text-xs font-semibold mb-5">
+        <div className="text-center md:text-left">
+          <img
+            src={logoImg}
+            alt="Bonanza Handyman Services"
+            className="mx-auto md:mx-0 h-[140px] md:h-[200px] w-auto mb-8"
+          />
+          <div className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold mb-5" style={{ background: "color-mix(in oklab, var(--brand-gold) 25%, transparent)", color: "var(--brand-cream)" }}>
             <Star className="w-3.5 h-3.5 fill-current" /> Northern Nevada's same-day handyman
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl leading-[1.05] mb-5">
-            Same-day handyman & home services in <span style={{ background: "var(--gradient-hero)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Reno.</span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl leading-[1.1] mb-5" style={{ color: "var(--brand-cream)" }}>
+            Same-day handyman & home services in <span style={{ color: "var(--brand-gold)" }}>Reno.</span>
           </h1>
-          <p className="text-lg text-muted-foreground mb-6 max-w-lg">
+          <p className="text-lg mb-6 max-w-lg mx-auto md:mx-0" style={{ color: "var(--text-light)", opacity: 0.85 }}>
             Most handymen take days to call back. We answer the phone, show up on time, and finish the job. Licensed, insured, and bonded — no guesswork.
           </p>
 
@@ -208,47 +217,46 @@ function Hero() {
             className="block sm:inline-block mb-6 group"
             aria-label={`Call Bonanza Handyman at ${PHONE_DISPLAY}`}
           >
-            <div className="flex items-center gap-3 rounded-2xl px-5 py-4 text-primary-foreground transition-transform group-hover:scale-[1.02]" style={{ background: "var(--gradient-hero)", boxShadow: "var(--shadow-bold)" }}>
+            <div className="flex items-center gap-3 rounded px-5 py-4 transition-transform group-hover:scale-[1.02]" style={{ background: "var(--brand-gold)", color: "var(--bg-dark)", boxShadow: "var(--shadow-bold)" }}>
               <Phone className="w-7 h-7 md:w-8 md:h-8" />
               <div className="text-left">
-                <div className="text-xs uppercase tracking-widest opacity-90">Tap to call now</div>
-                <div className="font-display text-2xl sm:text-3xl md:text-4xl leading-none">{PHONE_DISPLAY}</div>
+                <div className="text-xs uppercase tracking-widest opacity-80">Tap to call now</div>
+                <div className="font-display text-2xl sm:text-3xl md:text-4xl leading-none font-extrabold">{PHONE_DISPLAY}</div>
               </div>
             </div>
           </a>
 
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm font-semibold text-secondary mb-6">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-2 text-sm font-semibold mb-6">
             <Badge>Licensed</Badge>
             <Badge>Insured</Badge>
             <Badge>Bonded</Badge>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-3">
-            <Button asChild size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 font-bold">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+            <Button asChild size="lg" className="font-semibold uppercase tracking-wider" style={{ background: "var(--brand-gold)", color: "var(--bg-dark)" }}>
               <a href="#contact">Get a free quote</a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="font-bold border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+            <Button asChild size="lg" variant="outline" className="font-semibold border-2" style={{ borderColor: "var(--brand-cream)", color: "var(--brand-cream)", background: "transparent" }}>
               <a href={`tel:${PHONE_TEL}`}><Phone className="w-4 h-4" /> Call now</a>
             </Button>
           </div>
         </div>
 
         <div className="relative">
-          <div className="absolute -inset-4 rounded-3xl blur-2xl opacity-40" style={{ background: "var(--gradient-hero)" }} />
           <img
             src={heroImg}
             alt="Bonanza Handyman Services technician with tool belt in front of a Reno Nevada home"
             width={1536}
             height={1024}
-            className="relative rounded-3xl object-cover w-full h-[420px] md:h-[520px]"
-            style={{ boxShadow: "var(--shadow-bold)" }}
+            className="relative rounded object-cover w-full h-[420px] md:h-[520px] border"
+            style={{ boxShadow: "var(--shadow-bold)", borderColor: "var(--brand-gold)" }}
           />
-          <div className="absolute -bottom-4 -left-4 bg-card rounded-xl px-4 py-3 border border-border" style={{ boxShadow: "var(--shadow-card)" }}>
+          <div className="absolute -bottom-4 -left-4 rounded px-4 py-3 border" style={{ background: "var(--bg-cream)", borderColor: "var(--brand-gold)", boxShadow: "var(--shadow-card)" }}>
             <div className="flex items-center gap-2">
               <div className="flex">
-                {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-accent text-accent" />)}
+                {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4" style={{ fill: "var(--brand-gold)", color: "var(--brand-gold)" }} />)}
               </div>
-              <span className="text-xs font-semibold">Reno-local & rated</span>
+              <span className="text-xs font-semibold" style={{ color: "var(--brand-brown)" }}>Reno-local & rated</span>
             </div>
           </div>
         </div>
