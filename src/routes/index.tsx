@@ -32,6 +32,7 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { Toaster } from "@/components/ui/sonner";
 import heroImg from "@/assets/hero-handyman.jpg";
+import logoImg from "@/assets/bonanza-logo.png";
 
 const PHONE_DISPLAY = "(775) 555-0123";
 const PHONE_TEL = "+17755550123";
@@ -170,12 +171,11 @@ function Header() {
     <header className="sticky top-0 z-40 backdrop-blur bg-background/85 border-b border-border">
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2">
-          <div className="w-9 h-9 rounded-lg flex items-center justify-center text-primary-foreground font-display" style={{ background: "var(--gradient-hero)" }}>
-            B
-          </div>
-          <span className="font-display text-lg leading-none">
-            BONANZA<span className="block text-[10px] tracking-widest text-muted-foreground font-sans">HANDYMAN · RENO NV</span>
-          </span>
+          <img
+            src={logoImg}
+            alt="Bonanza Handyman Services logo"
+            className="h-12 w-auto"
+          />
         </a>
         <a
           href={`tel:${PHONE_TEL}`}
