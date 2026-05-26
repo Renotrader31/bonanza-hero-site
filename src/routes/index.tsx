@@ -33,10 +33,7 @@ import { toast } from "sonner";
 import { Toaster } from "@/components/ui/sonner";
 import heroImg from "@/assets/hero-handyman.jpg";
 import logoImg from "@/assets/bonanza-logo.png";
-
-const PHONE_DISPLAY = "775-470-0835";
-const PHONE_TEL = "+17754700835";
-const EMAIL = "info@bonanza-handyman.com";
+import { Header, Footer, PHONE_DISPLAY, PHONE_TEL, EMAIL } from "@/components/SiteLayout";
 
 const services = [
   { icon: Wrench, title: "General Handyman", desc: "Honey-do lists, mounting, repairs, and odd jobs done right the first time." },
@@ -156,27 +153,6 @@ function Index() {
   );
 }
 
-function Header() {
-  return (
-    <header className="sticky top-0 z-40 backdrop-blur bg-background/90 border-b" style={{ borderColor: "var(--brand-gold)" }}>
-      <div className="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
-        <a href="#top" className="flex items-center" aria-label="Bonanza Handyman Services home">
-          <img
-            src={logoImg}
-            alt="Bonanza Handyman Services logo"
-            className="h-11 sm:h-14 w-auto"
-          />
-        </a>
-        <a
-          href={`tel:${PHONE_TEL}`}
-          className="hidden sm:inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-glow transition-colors tracking-wide"
-        >
-          <Phone className="w-4 h-4" /> {PHONE_DISPLAY}
-        </a>
-      </div>
-    </header>
-  );
-}
 
 function Hero() {
   return (
@@ -482,16 +458,6 @@ function Contact() {
   );
 }
 
-function Footer() {
-  return (
-    <footer className="py-10 px-4 text-sm" style={{ background: "var(--bg-dark)", color: "var(--text-light)" }}>
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-4 items-center">
-        <p style={{ color: "var(--brand-cream)" }}>© {new Date().getFullYear()} Bonanza Handyman Services · Licensed, Insured & Bonded · Reno, NV</p>
-        <a href={`tel:${PHONE_TEL}`} className="font-bold hover:underline" style={{ color: "var(--brand-gold)" }}>{PHONE_DISPLAY}</a>
-      </div>
-    </footer>
-  );
-}
 
 function SectionHeader({ eyebrow, title, light }: { eyebrow: string; title: string; light?: boolean }) {
   return (
