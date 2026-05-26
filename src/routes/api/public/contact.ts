@@ -11,7 +11,7 @@ const ContactSchema = z.object({
 })
 
 const TO_EMAIL = 'info@bonanza-handyman.com'
-const FROM_EMAIL = 'Bonanza Website <onboarding@resend.dev>'
+const FROM_EMAIL = 'Bonanza Website <quotes@bonanza-handyman.com>'
 
 function esc(s: string) {
   return s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]!))
