@@ -471,6 +471,10 @@ function Contact() {
             <p className="text-xs text-muted-foreground text-center">
               Or call <a href={`tel:${PHONE_TEL}`} className="text-primary font-bold">{PHONE_DISPLAY}</a> for the fastest response.
             </p>
+            <p className="text-xs text-muted-foreground text-center">
+              Prefer to book over the phone? Call us directly at <a href={`tel:${PHONE_TEL}`} className="text-primary font-bold">{PHONE_DISPLAY}</a>.
+            </p>
+
           </div>
         </form>
       </div>
