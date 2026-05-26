@@ -285,7 +285,7 @@ function Services() {
               className="group rounded-2xl bg-card border border-border p-6 hover:border-primary transition-all hover:-translate-y-1"
               style={{ boxShadow: "var(--shadow-card)" }}
             >
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-primary-foreground" style={{ background: "var(--gradient-hero)" }}>
+              <div className="w-12 h-12 rounded flex items-center justify-center mb-4" style={{ background: "var(--brand-gold)", color: "var(--bg-dark)" }}>
                 <s.icon className="w-6 h-6" />
               </div>
               <h3 className="text-xl mb-2">{s.title}</h3>
@@ -321,7 +321,8 @@ function WhyUs() {
 
 function ServiceArea() {
   return (
-    <section className="py-20 px-4">
+    <section className="py-20 px-4" style={{ background: "var(--bg-cream)" }}>
+
       <div className="max-w-6xl mx-auto">
         <SectionHeader eyebrow="Where we work" title="Proudly serving Northern Nevada" />
         <div className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -351,13 +352,13 @@ function HowItWorks() {
     { icon: CheckCircle2, title: "Job done right", desc: "Clean work, clean site, fair invoice. Backed by our workmanship." },
   ];
   return (
-    <section className="py-20 px-4" style={{ background: "var(--gradient-warm)" }}>
+    <section className="py-20 px-4 bg-background">
       <div className="max-w-6xl mx-auto">
         <SectionHeader eyebrow="How it works" title="Three steps. Zero runaround." />
         <div className="mt-10 grid md:grid-cols-3 gap-6">
           {steps.map((s, i) => (
             <div key={s.title} className="relative rounded-2xl bg-card border border-border p-6" style={{ boxShadow: "var(--shadow-card)" }}>
-              <div className="absolute -top-4 -left-4 w-10 h-10 rounded-full text-primary-foreground font-display flex items-center justify-center text-lg" style={{ background: "var(--gradient-hero)" }}>
+              <div className="absolute -top-4 -left-4 w-10 h-10 rounded-full font-display flex items-center justify-center text-lg" style={{ background: "var(--brand-gold)", color: "var(--bg-dark)" }}>
                 {i + 1}
               </div>
               <s.icon className="w-8 h-8 text-primary mb-3" />
@@ -373,7 +374,7 @@ function HowItWorks() {
 
 function FAQ() {
   return (
-    <section id="faq" className="py-20 px-4">
+    <section id="faq" className="py-20 px-4" style={{ background: "var(--bg-cream)" }}>
       <div className="max-w-3xl mx-auto">
         <SectionHeader eyebrow="FAQ" title="Real answers, no fluff" />
         <Accordion type="single" collapsible className="mt-8">
