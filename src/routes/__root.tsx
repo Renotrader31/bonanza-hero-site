@@ -89,10 +89,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "en_US" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "theme-color", content: "#c2410c" },
+      { name: "theme-color", content: "#111111" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
       { rel: "canonical", href: "https://bonanza-handyman.com/" },
     ],
   }),
