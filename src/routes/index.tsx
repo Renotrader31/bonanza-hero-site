@@ -449,23 +449,23 @@ function Contact() {
           <div className="space-y-4">
             <div>
               <Label htmlFor="name">Name</Label>
-              <Input id="name" name="name" required placeholder="Jane Doe" />
+              <Input id="name" name="name" required placeholder="Jane Doe" className="h-12 sm:h-11 text-base" />
             </div>
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="phone">Phone</Label>
-                <Input id="phone" name="phone" type="tel" required placeholder="(775) 555-1234" />
+                <Input id="phone" name="phone" type="tel" required placeholder="(775) 555-1234" className="h-12 sm:h-11 text-base" />
               </div>
               <div>
                 <Label htmlFor="city">City</Label>
-                <Input id="city" name="city" required placeholder="Reno" />
+                <Input id="city" name="city" required placeholder="Reno" className="h-12 sm:h-11 text-base" />
               </div>
             </div>
             <div>
               <Label htmlFor="message">What do you need done?</Label>
-              <Textarea id="message" name="message" rows={4} required placeholder="Replace 3 deck boards, hang a TV, and patch some drywall..." />
+              <Textarea id="message" name="message" rows={4} required placeholder="Replace 3 deck boards, hang a TV, and patch some drywall..." className="text-base" />
             </div>
-            <Button type="submit" disabled={submitting} size="lg" className="w-full font-semibold uppercase tracking-wider" style={{ background: "var(--brand-gold)", color: "var(--bg-dark)" }}>
+            <Button type="submit" disabled={submitting} size="lg" className="w-full h-12 font-semibold uppercase tracking-wider" style={{ background: "var(--brand-gold)", color: "var(--bg-dark)" }}>
               {submitting ? "Sending..." : "Request my free quote"}
             </Button>
             <p className="text-xs text-muted-foreground text-center">
