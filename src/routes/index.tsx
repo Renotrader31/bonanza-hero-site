@@ -36,7 +36,7 @@ import logoImg from "@/assets/bonanza-logo.png";
 
 const PHONE_DISPLAY = "775-470-0835";
 const PHONE_TEL = "+17754700835";
-const EMAIL = "hello@bonanza-handyman.com";
+const EMAIL = "info@bonanza-handyman.com";
 
 const services = [
   { icon: Wrench, title: "General Handyman", desc: "Honey-do lists, mounting, repairs, and odd jobs done right the first time." },
