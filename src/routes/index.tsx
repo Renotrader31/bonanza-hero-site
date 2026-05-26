@@ -69,8 +69,13 @@ const faqs = [
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { property: "og:image", content: "https://bonanza-handyman.com/og-image.jpg" },
-      { property: "twitter:image", content: "https://bonanza-handyman.com/og-image.jpg" },
+      { property: "og:image", content: "https://www.bonanza-handyman.com/og-image.jpg" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "twitter:image", content: "https://www.bonanza-handyman.com/og-image.jpg" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://www.bonanza-handyman.com/" },
     ],
     scripts: [
       {
@@ -79,16 +84,16 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@graph": [
             {
-              "@type": "LocalBusiness",
-              "@id": "https://bonanza-handyman.com/#business",
+              "@type": "HomeAndConstructionBusiness",
+              "@id": "https://www.bonanza-handyman.com/#business",
               name: "Bonanza Handyman Services",
               description:
                 "Same-day handyman and home services in Reno, Sparks, Carson City and the Lake Tahoe area. Licensed, insured and bonded.",
-              url: "https://bonanza-handyman.com/",
-              telephone: PHONE_TEL,
+              url: "https://www.bonanza-handyman.com",
+              telephone: "+1-775-470-0835",
               email: EMAIL,
               priceRange: "$$",
-              image: "https://bonanza-handyman.com/og-image.jpg",
+              image: "https://www.bonanza-handyman.com/og-image.jpg",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Reno",
@@ -97,32 +102,17 @@ export const Route = createFileRoute("/")({
                 addressCountry: "US",
               },
               geo: { "@type": "GeoCoordinates", latitude: 39.5296, longitude: -119.8138 },
-              openingHoursSpecification: [
-                {
-                  "@type": "OpeningHoursSpecification",
-                  dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                  opens: "07:00",
-                  closes: "19:00",
-                },
-                {
-                  "@type": "OpeningHoursSpecification",
-                  dayOfWeek: ["Saturday"],
-                  opens: "08:00",
-                  closes: "17:00",
-                },
+              areaServed: [
+                { "@type": "City", name: "Reno" },
+                { "@type": "City", name: "Sparks" },
+                { "@type": "City", name: "Carson City" },
+                ...cities.slice(3).map((c) => ({ "@type": "City", name: c })),
               ],
-              areaServed: cities.map((c) => ({
-                "@type": "City",
-                name: c,
-                ...(c === "Truckee"
-                  ? { containedInPlace: { "@type": "State", name: "California" } }
-                  : { containedInPlace: { "@type": "State", name: "Nevada" } }),
-              })),
             },
             {
               "@type": "Service",
               serviceType: "Handyman Services",
-              provider: { "@id": "https://bonanza-handyman.com/#business" },
+              provider: { "@id": "https://www.bonanza-handyman.com/#business" },
               areaServed: cities,
               hasOfferCatalog: {
                 "@type": "OfferCatalog",
