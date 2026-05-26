@@ -33,10 +33,7 @@ import { toast } from "sonner";
 import { Toaster } from "@/components/ui/sonner";
 import heroImg from "@/assets/hero-handyman.jpg";
 import logoImg from "@/assets/bonanza-logo.png";
-
-const PHONE_DISPLAY = "775-470-0835";
-const PHONE_TEL = "+17754700835";
-const EMAIL = "info@bonanza-handyman.com";
+import { Header, Footer, PHONE_DISPLAY, PHONE_TEL, EMAIL } from "@/components/SiteLayout";
 
 const services = [
   { icon: Wrench, title: "General Handyman", desc: "Honey-do lists, mounting, repairs, and odd jobs done right the first time." },
