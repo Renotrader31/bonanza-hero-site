@@ -451,13 +451,6 @@ function Contact() {
                 </span>
               </a>
             </li>
-            <li className="flex items-center gap-3">
-              <span className="w-11 h-11 rounded-xl bg-accent text-accent-foreground flex items-center justify-center"><Clock className="w-5 h-5" /></span>
-              <span>
-                <span className="block text-xs uppercase tracking-widest opacity-70">Hours</span>
-                <span className="font-semibold">Mon–Fri 7a–7p · Sat 8a–5p · Sun by appt</span>
-              </span>
-            </li>
           </ul>
         </div>
 
