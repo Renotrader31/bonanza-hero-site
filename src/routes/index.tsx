@@ -69,8 +69,13 @@ const faqs = [
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { property: "og:image", content: "https://bonanza-handyman.com/og-image.jpg" },
-      { property: "twitter:image", content: "https://bonanza-handyman.com/og-image.jpg" },
+      { property: "og:image", content: "https://www.bonanza-handyman.com/og-image.jpg" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "twitter:image", content: "https://www.bonanza-handyman.com/og-image.jpg" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://www.bonanza-handyman.com/" },
     ],
     scripts: [
       {
@@ -79,16 +84,16 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@graph": [
             {
-              "@type": "LocalBusiness",
-              "@id": "https://bonanza-handyman.com/#business",
+              "@type": "HomeAndConstructionBusiness",
+              "@id": "https://www.bonanza-handyman.com/#business",
               name: "Bonanza Handyman Services",
               description:
                 "Same-day handyman and home services in Reno, Sparks, Carson City and the Lake Tahoe area. Licensed, insured and bonded.",
-              url: "https://bonanza-handyman.com/",
-              telephone: PHONE_TEL,
+              url: "https://www.bonanza-handyman.com",
+              telephone: "+1-775-470-0835",
               email: EMAIL,
               priceRange: "$$",
-              image: "https://bonanza-handyman.com/og-image.jpg",
+              image: "https://www.bonanza-handyman.com/og-image.jpg",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Reno",
@@ -97,32 +102,17 @@ export const Route = createFileRoute("/")({
                 addressCountry: "US",
               },
               geo: { "@type": "GeoCoordinates", latitude: 39.5296, longitude: -119.8138 },
-              openingHoursSpecification: [
-                {
-                  "@type": "OpeningHoursSpecification",
-                  dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                  opens: "07:00",
-                  closes: "19:00",
-                },
-                {
-                  "@type": "OpeningHoursSpecification",
-                  dayOfWeek: ["Saturday"],
-                  opens: "08:00",
-                  closes: "17:00",
-                },
+              areaServed: [
+                { "@type": "City", name: "Reno" },
+                { "@type": "City", name: "Sparks" },
+                { "@type": "City", name: "Carson City" },
+                ...cities.slice(3).map((c) => ({ "@type": "City", name: c })),
               ],
-              areaServed: cities.map((c) => ({
-                "@type": "City",
-                name: c,
-                ...(c === "Truckee"
-                  ? { containedInPlace: { "@type": "State", name: "California" } }
-                  : { containedInPlace: { "@type": "State", name: "Nevada" } }),
-              })),
             },
             {
               "@type": "Service",
               serviceType: "Handyman Services",
-              provider: { "@id": "https://bonanza-handyman.com/#business" },
+              provider: { "@id": "https://www.bonanza-handyman.com/#business" },
               areaServed: cities,
               hasOfferCatalog: {
                 "@type": "OfferCatalog",
@@ -233,10 +223,10 @@ function Hero() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-            <Button asChild size="lg" className="font-semibold uppercase tracking-wider" style={{ background: "var(--brand-gold)", color: "var(--bg-dark)" }}>
+            <Button asChild size="lg" className="w-full sm:w-auto h-12 font-semibold uppercase tracking-wider" style={{ background: "var(--brand-gold)", color: "var(--bg-dark)" }}>
               <a href="#contact">Get a free quote</a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="font-semibold border-2" style={{ borderColor: "var(--brand-cream)", color: "var(--brand-cream)", background: "transparent" }}>
+            <Button asChild size="lg" variant="outline" className="w-full sm:w-auto h-12 font-semibold border-2" style={{ borderColor: "var(--brand-cream)", color: "var(--brand-cream)", background: "transparent" }}>
               <a href={`tel:${PHONE_TEL}`}><Phone className="w-4 h-4" /> Call now</a>
             </Button>
           </div>
@@ -459,23 +449,23 @@ function Contact() {
           <div className="space-y-4">
             <div>
               <Label htmlFor="name">Name</Label>
-              <Input id="name" name="name" required placeholder="Jane Doe" />
+              <Input id="name" name="name" required placeholder="Jane Doe" className="h-12 sm:h-11 text-base" />
             </div>
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="phone">Phone</Label>
-                <Input id="phone" name="phone" type="tel" required placeholder="(775) 555-1234" />
+                <Input id="phone" name="phone" type="tel" required placeholder="(775) 555-1234" className="h-12 sm:h-11 text-base" />
               </div>
               <div>
                 <Label htmlFor="city">City</Label>
-                <Input id="city" name="city" required placeholder="Reno" />
+                <Input id="city" name="city" required placeholder="Reno" className="h-12 sm:h-11 text-base" />
               </div>
             </div>
             <div>
               <Label htmlFor="message">What do you need done?</Label>
-              <Textarea id="message" name="message" rows={4} required placeholder="Replace 3 deck boards, hang a TV, and patch some drywall..." />
+              <Textarea id="message" name="message" rows={4} required placeholder="Replace 3 deck boards, hang a TV, and patch some drywall..." className="text-base" />
             </div>
-            <Button type="submit" disabled={submitting} size="lg" className="w-full font-semibold uppercase tracking-wider" style={{ background: "var(--brand-gold)", color: "var(--bg-dark)" }}>
+            <Button type="submit" disabled={submitting} size="lg" className="w-full h-12 font-semibold uppercase tracking-wider" style={{ background: "var(--brand-gold)", color: "var(--bg-dark)" }}>
               {submitting ? "Sending..." : "Request my free quote"}
             </Button>
             <p className="text-xs text-muted-foreground text-center">
