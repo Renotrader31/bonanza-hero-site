@@ -465,7 +465,7 @@ function Contact() {
               <Label htmlFor="message">What do you need done?</Label>
               <Textarea id="message" name="message" rows={4} required placeholder="Replace 3 deck boards, hang a TV, and patch some drywall..." />
             </div>
-            <Button type="submit" disabled={submitting} size="lg" className="w-full font-bold text-primary-foreground" style={{ background: "var(--gradient-hero)" }}>
+            <Button type="submit" disabled={submitting} size="lg" className="w-full font-semibold uppercase tracking-wider" style={{ background: "var(--brand-gold)", color: "var(--bg-dark)" }}>
               {submitting ? "Sending..." : "Request my free quote"}
             </Button>
             <p className="text-xs text-muted-foreground text-center">
@@ -480,10 +480,10 @@ function Contact() {
 
 function Footer() {
   return (
-    <footer className="bg-background border-t border-border py-10 px-4 text-sm text-muted-foreground">
+    <footer className="py-10 px-4 text-sm" style={{ background: "var(--bg-dark)", color: "var(--text-light)" }}>
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-4 items-center">
-        <p>© {new Date().getFullYear()} Bonanza Handyman Services · Licensed, Insured & Bonded · Reno, NV</p>
-        <a href={`tel:${PHONE_TEL}`} className="font-bold text-primary hover:underline">{PHONE_DISPLAY}</a>
+        <p style={{ color: "var(--brand-cream)" }}>© {new Date().getFullYear()} Bonanza Handyman Services · Licensed, Insured & Bonded · Reno, NV</p>
+        <a href={`tel:${PHONE_TEL}`} className="font-bold hover:underline" style={{ color: "var(--brand-gold)" }}>{PHONE_DISPLAY}</a>
       </div>
     </footer>
   );
