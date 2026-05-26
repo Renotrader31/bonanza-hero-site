@@ -12,21 +12,22 @@ import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+    <div className="flex min-h-screen items-center justify-center px-4" style={{ background: "var(--bg-dark)", color: "var(--text-light)" }}>
+      <div className="max-w-lg text-center">
+        <p className="text-xs uppercase tracking-widest font-bold mb-3" style={{ color: "var(--brand-gold)" }}>404</p>
+        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl leading-[1.1] mb-4" style={{ color: "var(--brand-cream)" }}>
+          Looks like that page wandered off.
+        </h1>
+        <p className="text-lg mb-8 opacity-85">
+          But we can probably fix it. Like everything else.
         </p>
-        <div className="mt-6">
-          <Link
-            to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Go home
-          </Link>
-        </div>
+        <Link
+          to="/"
+          className="inline-flex w-full sm:w-auto items-center justify-center rounded px-6 py-3 text-base font-semibold uppercase tracking-wider transition-transform hover:scale-[1.02]"
+          style={{ background: "var(--brand-gold)", color: "var(--bg-dark)", boxShadow: "var(--shadow-bold)" }}
+        >
+          Back to Home
+        </Link>
       </div>
     </div>
   );
@@ -72,29 +73,32 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Bonanza Handyman Services | Same-Day Handyman in Reno, NV" },
+      { title: "Bonanza Handyman Services — Reno, Sparks & Carson City Handyman | Licensed & Insured" },
       {
         name: "description",
         content:
-          "Same-day & next-day handyman services in Reno, Sparks, Carson City & Tahoe. Licensed, insured & bonded. Free quotes. Call 775-470-0835.",
+          "Reno's trusted handyman for TV mounting, drywall, doors, plumbing, electrical, and more. Licensed and insured. Call 775-470-0835.",
       },
       { name: "author", content: "Bonanza Handyman Services" },
       { name: "robots", content: "index, follow" },
-      { property: "og:title", content: "Bonanza Handyman Services | Same-Day Handyman in Reno" },
+      { property: "og:title", content: "Bonanza Handyman Services — Reno, Sparks & Carson City Handyman | Licensed & Insured" },
       {
         property: "og:description",
         content:
-          "Licensed, insured & bonded handyman in Reno/Sparks/Carson City/Tahoe. Same-day response. Free quotes.",
+          "Reno's trusted handyman for TV mounting, drywall, doors, plumbing, electrical, and more. Licensed and insured. Call 775-470-0835.",
       },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "en_US" },
+      { property: "og:url", content: "https://www.bonanza-handyman.com/" },
+      { property: "og:site_name", content: "Bonanza Handyman Services" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Bonanza Handyman Services — Reno, Sparks & Carson City Handyman | Licensed & Insured" },
+      { name: "twitter:description", content: "Reno's trusted handyman for TV mounting, drywall, doors, plumbing, electrical, and more. Licensed and insured. Call 775-470-0835." },
       { name: "theme-color", content: "#111111" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", type: "image/png", href: "/favicon.png" },
-      { rel: "canonical", href: "https://bonanza-handyman.com/" },
+      { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon.png" },
     ],
   }),
   shellComponent: RootShell,
