@@ -76,7 +76,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Same-day & next-day handyman services in Reno, Sparks, Carson City & Tahoe. Licensed, insured & bonded. Free quotes. Call (775) 555-0123.",
+          "Same-day & next-day handyman services in Reno, Sparks, Carson City & Tahoe. Licensed, insured & bonded. Free quotes. Call 775-470-0835.",
       },
       { name: "author", content: "Bonanza Handyman Services" },
       { name: "robots", content: "index, follow" },
