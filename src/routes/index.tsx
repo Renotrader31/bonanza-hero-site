@@ -32,6 +32,7 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { Toaster } from "@/components/ui/sonner";
 import heroImg from "@/assets/hero-handyman.jpg";
+import logoImg from "@/assets/bonanza-logo.png";
 
 const PHONE_DISPLAY = "(775) 555-0123";
 const PHONE_TEL = "+17755550123";
