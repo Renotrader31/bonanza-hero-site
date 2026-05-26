@@ -10,7 +10,7 @@ const ContactSchema = z.object({
   message: z.string().trim().min(1).max(2000),
 })
 
-const TO_EMAIL = 'hello@bonanza-handyman.com'
+const TO_EMAIL = 'info@bonanza-handyman.com'
 const FROM_EMAIL = 'Bonanza Website <onboarding@resend.dev>'
 
 function esc(s: string) {
