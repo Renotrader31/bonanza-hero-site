@@ -396,14 +396,31 @@ function FAQ() {
 
 function Contact() {
   const [submitting, setSubmitting] = useState(false);
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    const payload = {
+      name: String(fd.get("name") ?? ""),
+      phone: String(fd.get("phone") ?? ""),
+      city: String(fd.get("city") ?? ""),
+      message: String(fd.get("message") ?? ""),
+    };
     setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
-      (e.target as HTMLFormElement).reset();
+    try {
+      const res = await fetch("/api/public/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error("send failed");
+      form.reset();
       toast.success("Quote request sent! We'll call you back shortly.");
-    }, 600);
+    } catch {
+      toast.error(`Couldn't send. Please call ${PHONE_DISPLAY}.`);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
