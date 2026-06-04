@@ -217,6 +217,8 @@ function Hero() {
             alt="Bonanza Handyman Services technician with tool belt in front of a Reno Nevada home"
             width={1536}
             height={1024}
+            fetchPriority="high"
+            decoding="async"
             className="relative rounded object-cover w-full h-[420px] md:h-[520px] border"
             style={{ boxShadow: "var(--shadow-bold)", borderColor: "var(--brand-gold)" }}
           />
