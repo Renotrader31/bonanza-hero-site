@@ -73,7 +73,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Bonanza Handyman Services — Reno, Sparks & Carson City Handyman | Licensed & Insured" },
+      { title: "Bonanza Handyman Services — Reno & Sparks Handyman" },
       {
         name: "description",
         content:
@@ -81,7 +81,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { name: "author", content: "Bonanza Handyman Services" },
       { name: "robots", content: "index, follow" },
-      { property: "og:title", content: "Bonanza Handyman Services — Reno, Sparks & Carson City Handyman | Licensed & Insured" },
+      { property: "og:title", content: "Bonanza Handyman Services — Reno & Sparks Handyman" },
       {
         property: "og:description",
         content:
@@ -89,16 +89,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "en_US" },
-      { property: "og:url", content: "https://www.bonanza-handyman.com/" },
       { property: "og:site_name", content: "Bonanza Handyman Services" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Bonanza Handyman Services — Reno, Sparks & Carson City Handyman | Licensed & Insured" },
-      { name: "twitter:description", content: "Bonanza Hero Site is a single-page marketing application for Bonanza Handyman Services." },
+      { name: "twitter:title", content: "Bonanza Handyman Services — Reno & Sparks Handyman" },
+      {
+        name: "twitter:description",
+        content:
+          "Reno's trusted handyman for TV mounting, drywall, doors, plumbing, electrical, and more. Licensed and insured. Call 775-470-0835.",
+      },
       { name: "theme-color", content: "#111111" },
-      { name: "description", content: "Bonanza Hero Site is a single-page marketing application for Bonanza Handyman Services." },
-      { property: "og:description", content: "Bonanza Hero Site is a single-page marketing application for Bonanza Handyman Services." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/50e71d0f-e1d8-4d3a-acb2-5cca8e1d2c25/id-preview-a3004135--48774d6e-a87d-4393-8844-17b15174504c.lovable.app-1779834999139.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/50e71d0f-e1d8-4d3a-acb2-5cca8e1d2c25/id-preview-a3004135--48774d6e-a87d-4393-8844-17b15174504c.lovable.app-1779834999139.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
