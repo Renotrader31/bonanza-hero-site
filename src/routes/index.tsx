@@ -69,6 +69,7 @@ export const Route = createFileRoute("/")({
       { property: "og:image", content: "https://www.bonanza-handyman.com/og-image.jpg" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
+      { property: "og:url", content: "https://www.bonanza-handyman.com/" },
       { property: "twitter:image", content: "https://www.bonanza-handyman.com/og-image.jpg" },
     ],
     links: [
@@ -141,13 +142,15 @@ function Index() {
     <div className="min-h-screen bg-background text-foreground font-sans">
       <Toaster richColors position="top-center" />
       <Header />
-      <Hero />
-      <Services />
-      <WhyUs />
-      <ServiceArea />
-      <HowItWorks />
-      <FAQ />
-      <Contact />
+      <main>
+        <Hero />
+        <Services />
+        <WhyUs />
+        <ServiceArea />
+        <HowItWorks />
+        <FAQ />
+        <Contact />
+      </main>
       <Footer />
     </div>
   );
@@ -214,6 +217,8 @@ function Hero() {
             alt="Bonanza Handyman Services technician with tool belt in front of a Reno Nevada home"
             width={1536}
             height={1024}
+            fetchPriority="high"
+            decoding="async"
             className="relative rounded object-cover w-full h-[420px] md:h-[520px] border"
             style={{ boxShadow: "var(--shadow-bold)", borderColor: "var(--brand-gold)" }}
           />
