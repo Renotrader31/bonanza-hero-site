@@ -1,0 +1,9 @@
+# Bonanza Handyman Services
+
+> Licensed, insured, and bonded handyman serving Reno, Sparks, Carson City, and the Lake Tahoe area. Same-day response, upfront pricing, and clean workmanship for repairs, decks, painting, power washing, and property cleanup.
+
+## Pages
+
+- [Home](/): Services, service area, how it works, FAQ, and free-quote contact form. Call 775-470-0835.
+- [Privacy Policy](/privacy): How we collect, use, and protect personal information submitted through the site.
+- [Terms of Service](/terms): Booking, pricing, deposits, warranty, and cancellation terms for handyman work.
