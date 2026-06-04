@@ -69,6 +69,7 @@ export const Route = createFileRoute("/")({
       { property: "og:image", content: "https://www.bonanza-handyman.com/og-image.jpg" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
+      { property: "og:url", content: "https://www.bonanza-handyman.com/" },
       { property: "twitter:image", content: "https://www.bonanza-handyman.com/og-image.jpg" },
     ],
     links: [
