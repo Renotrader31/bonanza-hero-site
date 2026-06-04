@@ -19,6 +19,10 @@ export const Route = createFileRoute("/privacy")({
         content:
           "Learn how Bonanza Handyman Services collects, uses, and protects your personal information.",
       },
+      { property: "og:url", content: "https://www.bonanza-handyman.com/privacy" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://www.bonanza-handyman.com/privacy" },
     ],
   }),
   component: PrivacyPage,
