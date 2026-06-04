@@ -19,6 +19,10 @@ export const Route = createFileRoute("/terms")({
         content:
           "Read the Terms of Service for using Bonanza Handyman Services' website and booking handyman work in Northern Nevada.",
       },
+      { property: "og:url", content: "https://www.bonanza-handyman.com/terms" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://www.bonanza-handyman.com/terms" },
     ],
   }),
   component: TermsPage,
