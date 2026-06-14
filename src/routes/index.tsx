@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect } from "react";
 import {
   Phone,
   Hammer,
@@ -26,10 +26,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { toast } from "sonner";
 import { Toaster } from "@/components/ui/sonner";
 import heroImg from "@/assets/hero-handyman.jpg";
 import logoImg from "@/assets/bonanza-logo.png";
@@ -366,33 +362,15 @@ function FAQ() {
 }
 
 function Contact() {
-  const [submitting, setSubmitting] = useState(false);
-  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const fd = new FormData(form);
-    const payload = {
-      name: String(fd.get("name") ?? ""),
-      phone: String(fd.get("phone") ?? ""),
-      city: String(fd.get("city") ?? ""),
-      message: String(fd.get("message") ?? ""),
+  useEffect(() => {
+    const handler = (event: MessageEvent) => {
+      if (event.data.action === "redirect") {
+        window.location.href = event.data.url;
+      }
     };
-    setSubmitting(true);
-    try {
-      const res = await fetch("/api/public/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      if (!res.ok) throw new Error("send failed");
-      form.reset();
-      toast.success("Quote request sent! We'll call you back shortly.");
-    } catch {
-      toast.error(`Couldn't send. Please call ${PHONE_DISPLAY}.`);
-    } finally {
-      setSubmitting(false);
-    }
-  };
+    window.addEventListener("message", handler);
+    return () => window.removeEventListener("message", handler);
+  }, []);
 
   return (
     <section id="contact" className="py-20 px-4 bg-secondary text-secondary-foreground">
