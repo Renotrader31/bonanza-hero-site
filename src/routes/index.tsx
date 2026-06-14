@@ -425,39 +425,15 @@ function Contact() {
           </ul>
         </div>
 
-        <form onSubmit={onSubmit} className="rounded-2xl bg-card text-foreground p-6 md:p-8 border border-border" style={{ boxShadow: "var(--shadow-bold)" }}>
-          <h3 className="text-2xl mb-5">Get a free quote</h3>
-          <div className="space-y-4">
-            <div>
-              <Label htmlFor="name">Name</Label>
-              <Input id="name" name="name" required placeholder="Jane Doe" className="h-12 sm:h-11 text-base" />
-            </div>
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div>
-                <Label htmlFor="phone">Phone</Label>
-                <Input id="phone" name="phone" type="tel" required placeholder="(775) 555-1234" className="h-12 sm:h-11 text-base" />
-              </div>
-              <div>
-                <Label htmlFor="city">City</Label>
-                <Input id="city" name="city" required placeholder="Reno" className="h-12 sm:h-11 text-base" />
-              </div>
-            </div>
-            <div>
-              <Label htmlFor="message">What do you need done?</Label>
-              <Textarea id="message" name="message" rows={4} required placeholder="Replace 3 deck boards, hang a TV, and patch some drywall..." className="text-base" />
-            </div>
-            <Button type="submit" disabled={submitting} size="lg" className="w-full h-12 font-semibold uppercase tracking-wider" style={{ background: "var(--brand-gold)", color: "var(--bg-dark)" }}>
-              {submitting ? "Sending..." : "Request my free quote"}
-            </Button>
-            <p className="text-xs text-muted-foreground text-center">
-              Or call <a href={`tel:${PHONE_TEL}`} className="text-primary font-bold">{PHONE_DISPLAY}</a> for the fastest response.
-            </p>
-            <p className="text-xs text-muted-foreground text-center">
-              Prefer to book over the phone? Call us directly at <a href={`tel:${PHONE_TEL}`} className="text-primary font-bold">{PHONE_DISPLAY}</a>.
-            </p>
-
+        <div className="rounded-2xl bg-card text-foreground p-6 md:p-8 border border-border overflow-hidden" style={{ boxShadow: "var(--shadow-bold)", height: "600px" }}>
+          <div style={{ width: "100%", height: "100%", overflow: "hidden", margin: 0, padding: 0 }}>
+            <iframe
+              src="https://app.structur.com/embed?form=new_opportunity&id=3a8843fa-8b90-4956-9d8b-a082f5901686"
+              style={{ width: "100%", height: "100%", border: "none" }}
+              title="Contact Form"
+            />
           </div>
-        </form>
+        </div>
       </div>
     </section>
   );
